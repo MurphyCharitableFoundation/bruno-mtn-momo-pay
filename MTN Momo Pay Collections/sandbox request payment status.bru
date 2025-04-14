@@ -1,0 +1,38 @@
+meta {
+  name: sandbox request payment status
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{base-url}}/collection/v1_0/requesttopay/{{reference-id}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  X-Target-Environment: {{target-environment}}
+  Ocp-Apim-Subscription-Key: {{subscription-key}}
+}
+
+auth:bearer {
+  token: {{access-token}}
+}
+
+docs {
+  Example Response
+  
+  {
+    "financialTransactionId": "1373292760",
+    "externalId": "090",
+    "amount": "10",
+    "currency": "EUR",
+    "payer": {
+      "partyIdType": "PARTY_CODE",
+      "partyId": "4dcfe097-b524-43db-9ba3-34f1b50c6266"
+    },
+    "payerMessage": "Payer Message Example.",
+    "payeeNote": "Payee Message Example.",
+    "status": "SUCCESSFUL"
+  }
+}

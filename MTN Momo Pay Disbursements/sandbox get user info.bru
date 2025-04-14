@@ -1,0 +1,36 @@
+meta {
+  name: sandbox get user info.
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base-url}}/v1_0/apiuser/{{reference-id}}
+  body: json
+  auth: basic
+}
+
+headers {
+  X-Reference-Id: {{reference-id}}
+  Ocp-Apim-Subscription-Key: {{subscription-key}}
+}
+
+auth:basic {
+  username: {{reference-id}}
+  password: {{
+}
+
+body:json {
+  {
+      "providerCallbackHost": "{{callback-host}}"
+  }
+}
+
+docs {
+  Example Response
+  
+  {
+    "providerCallbackHost": "localhost",
+    "targetEnvironment": "sandbox"
+  }
+}

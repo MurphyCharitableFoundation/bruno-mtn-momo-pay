@@ -1,0 +1,37 @@
+meta {
+  name: sandbox create access-token
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{base-url}}/disbursement/token/
+  body: json
+  auth: basic
+}
+
+headers {
+  X-Reference-Id: {{reference-id}}
+  Ocp-Apim-Subscription-Key: {{subscription-key}}
+}
+
+auth:basic {
+  username: {{reference-id}}
+  password: {{api-key}}
+}
+
+body:json {
+  {
+      "providerCallbackHost": "{{callback-host}}"
+  }
+}
+
+docs {
+  Example Response
+  
+  {
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSMjU2In0.eyJjbGllbnRJZCI6ImY4YjY5NjAwLWIzMTctNGRjNy1hNWRkLWY5OTUzNjljZWYxMCIsImV4cGlyZXMiOiIyMDI1LTA0LTE0VDIyOjEyOjM2LjI5MyIsInNlc3Npb25JZCI6IjRiNTg1NzdjLTIyNmMtNGVlNy1hYTcwLTE5Njg1NGM1ZDI1YiJ9.E3-K4K60SqwFaK3vq1clxby5cHFJMblSYOqU0JM8IssLM1HZHrRD2T6FG2pyyaAigQ7dA0QHz-gTIaWW4Yc806T0uhTqh7cmsWk8xllW_D5mUDt-POgDS7GsSAQE7K5emS1khgHB4cytEmLpIm9-5gVOwMZZhNND5N20kfzk2TtFznDmNX9G2FewxmUfIV6Dog7EzYWVZgjDS9QSuSV9ljliVYEnkNdd28uvZMJiGDl4LKkOGIwhTUNxEKpDBbOqF3XNKoHebkBaWr90iwOO9GdpmPmFNM3hwoheGlRfTKPpAxjLMC_3iAppnir9oBhJYK56j5xLx3UZoAbx2asQeA",
+    "token_type": "access_token",
+    "expires_in": 3600
+  }
+}

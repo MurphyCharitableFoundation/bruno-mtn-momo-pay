@@ -1,0 +1,24 @@
+meta {
+  name: sandbox generate api key
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base-url}}/v1_0/apiuser/{{reference-id}}/apikey
+  body: none
+  auth: none
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{subscription-key}}
+  X-Reference-Id: {{reference-id}}
+}
+
+docs {
+  Example Response
+  
+  {
+    "apiKey": "0cf9cdabb8024bb297fd4677715c2376"
+  }
+}

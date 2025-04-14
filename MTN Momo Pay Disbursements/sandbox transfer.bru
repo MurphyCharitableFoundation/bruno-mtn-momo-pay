@@ -1,0 +1,36 @@
+meta {
+  name: sandbox transfer
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{base-url}}/disbursement/v1_0/transfer
+  body: json
+  auth: bearer
+}
+
+headers {
+  X-Reference-Id: {{reference-id}}
+  Ocp-Apim-Subscription-Key: {{subscription-key}}
+  X-Target-Environment: {{target-environment}}
+  X-Callback-Url: {{callback-url}}
+}
+
+auth:bearer {
+  token: {{access-token}}
+}
+
+body:json {
+  {
+      "amount": "20",
+      "currency": "EUR",
+      "externalId": "80e467d3-ab5d-4f7c-90f2-bdeac405e428",
+      "payee": {
+          "partyIdType": "PARTY_CODE",
+          "partyId": "80e469d3-ab5d-4f7c-90f2-bdeac405e428"
+      },
+      "payerMessage": "Payer Message.",
+      "payeeNote": "Payee Note."
+  }
+}

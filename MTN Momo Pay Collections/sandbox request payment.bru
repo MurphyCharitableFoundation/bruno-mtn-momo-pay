@@ -1,0 +1,36 @@
+meta {
+  name: sandbox request payment
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{base-url}}/collection/v1_0/requesttopay
+  body: json
+  auth: bearer
+}
+
+headers {
+  X-Callback-Url: {{callback-url}}
+  X-Reference-Id: {{reference-id}}
+  X-Target-Environment: {{target-environment}}
+  Ocp-Apim-Subscription-Key: {{subscription-key}}
+}
+
+auth:bearer {
+  token: {{access-token}}
+}
+
+body:json {
+  {
+      "amount": "10",
+      "currency": "EUR",
+      "externalId": "090",
+      "payer": {
+          "partyIdType": "PARTY_CODE",
+          "partyId": "{{a-customer-reference}}"
+      },
+      "payerMessage": "Payer Message Example.",
+      "payeeNote": "Payee Message Example."
+  }
+}

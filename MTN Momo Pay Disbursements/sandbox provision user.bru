@@ -1,0 +1,30 @@
+meta {
+  name: sandbox provision user
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base-url}}/v1_0/apiuser
+  body: json
+  auth: none
+}
+
+headers {
+  X-Reference-Id: {{reference-id}}
+  Ocp-Apim-Subscription-Key: {{subscription-key}}
+}
+
+body:json {
+  {
+      "providerCallbackHost": "{{callback-host}}"
+  }
+}
+
+docs {
+  Example Response
+  
+  {
+    "providerCallbackHost": "localhost"
+  }
+}

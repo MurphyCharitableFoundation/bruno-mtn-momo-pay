@@ -1,0 +1,38 @@
+meta {
+  name: MTN Momo Pay Collections
+}
+
+auth {
+  mode: none
+}
+
+vars:pre-request {
+  subscription-key: 8649e71c040f4e8ca6e6738f2a8bfad4
+  base-url: https://sandbox.momodeveloper.mtn.com
+  reference-id: 5223f0db-f4d8-4332-924d-c34782a24cd5
+  api-key: 0cf9cdabb8024bb297fd4677715c2376
+  callback-host: localhost
+  access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSMjU2In0.eyJjbGllbnRJZCI6IjUyMjNmMGRiLWY0ZDgtNDMzMi05MjRkLWMzNDc4MmEyNGNkNSIsImV4cGlyZXMiOiIyMDI1LTA0LTE0VDIyOjUxOjEwLjM5MCIsInNlc3Npb25JZCI6IjE1M2U4MmM4LTVhZmUtNDE3MS1hZTVkLTA0ODJmNjg1YzljZCJ9.kUWLVE2pVGBawC-Alh38hMk5F3qSaxckVB7yYU4KikLD7_hMAJf8UlgFx_98YFBGVX14ZtTdwyVxsQCUYpb2lujGvGs6eTUAzqvKaG8P3wpr6nt7yl0LnsZhQBnNdLwaVOdTfisr0HIocxUHnInKKZeUv26p2ivA87uHfxfXJIoiJ5GLfl0GFZmgOX8qHyqaq0Q64qwW_gVJq0uUaxgXliRSH2lJlV63HLDg5x6UERqGG4gJ-h45T_aZF6LWon37hMxUJfRI9Pbvr-K0jjqNu3Z4e94dWOMWk3cdeLXgFRj5tIaQqyN2wTfHge4aWvzZTooSPjJDH4X27VAZ1ifKCg
+  callback-url: http://localhost:8000/api/payment/mtn/capture-repayment
+  target-environment: sandbox
+  a-customer-reference: 4dcfe097-b524-43db-9ba3-34f1b50c6266
+  service-provider: mcf
+}
+
+docs {
+  # MTN Momo Pay Collections API Collection
+  
+  ## Overview
+  Use this collection as a guide for understanding and interacting with MTN for facilitating mobile money transactions: specifically collections. 
+  
+  Collection is the action that describes the MCF procurring funds back from a Borrower in the case of the Kind Loans App. 
+  
+  ## Variables
+  Ensure to use the correct variables which you can get by perusing the MTN Momo Pay Docs and registering for a developer account. As it stands, the variables used in this collection are associated with a maintainers MTN Developer account. 
+  
+  ## Resources
+  [Collections MTN Momo Pay Resources](https://momodeveloper.mtn.com/api-details#api=collection&operation=RequesttoPay)
+  
+  ## Questions
+  Please reach out to @Ayo on Slack if you have any questions.
+}

@@ -1,0 +1,21 @@
+meta {
+  name: sandbox create access-token
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{base-url}}/collection/token/
+  body: none
+  auth: basic
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{subscription-key}}
+  X-Reference-Id: {{reference-id}}
+}
+
+auth:basic {
+  username: {{reference-id}}
+  password: {{api-key}}
+}

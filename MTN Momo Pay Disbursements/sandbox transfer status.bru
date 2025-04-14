@@ -1,0 +1,52 @@
+meta {
+  name: sandbox transfer status
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{base-url}}/disbursement/v1_0/transfer/{{reference-id}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{subscription-key}}
+  X-Target-Environment: {{target-environment}}
+}
+
+auth:bearer {
+  token: {{access-token}}
+}
+
+body:json {
+  {
+      "amount": "20",
+      "currency": "EUR",
+      "externalId": "90",
+      "payee": {
+          "partyIdType": "PARTY_CODE",
+          "partyId": "80e469d3-ab5d-4f7c-90f2-bdeac405e428"
+      },
+      "payerMessage": "Payer Message.",
+      "payeeNote": "Payee Note."
+  }
+}
+
+docs {
+  Example Response
+  
+  {
+    "amount": "20",
+    "currency": "EUR",
+    "financialTransactionId": "734059844",
+    "externalId": "80e467d3-ab5d-4f7c-90f2-bdeac405e428",
+    "payee": {
+      "partyIdType": "PARTY_CODE",
+      "partyId": "80e469d3-ab5d-4f7c-90f2-bdeac405e428"
+    },
+    "payerMessage": "Payer Message.",
+    "payeeNote": "Payee Note.",
+    "status": "SUCCESSFUL"
+  }
+}

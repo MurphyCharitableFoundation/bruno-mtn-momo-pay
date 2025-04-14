@@ -1,0 +1,35 @@
+meta {
+  name: sandbox get account balance
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{base-url}}/disbursement/v1_0/account/balance
+  body: json
+  auth: bearer
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: {{subscription-key}}
+  X-Target-Environment: {{target-environment}}
+}
+
+auth:bearer {
+  token: {{access-token}}
+}
+
+body:json {
+  {
+      "providerCallbackHost": "{{callback-host}}"
+  }
+}
+
+docs {
+  Example Response
+  
+  {
+    "availableBalance": "0",
+    "currency": "EUR"
+  }
+}

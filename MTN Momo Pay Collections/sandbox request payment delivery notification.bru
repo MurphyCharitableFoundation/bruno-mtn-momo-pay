@@ -1,0 +1,28 @@
+meta {
+  name: sandbox request payment delivery notification
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{base-url}}/collection/v1_0/requesttopay/{{reference-id}}/deliverynotification
+  body: json
+  auth: bearer
+}
+
+headers {
+  X-Target-Environment: {{target-environment}}
+  Ocp-Apim-Subscription-Key: {{subscription-key}}
+  ~X-Callback-Url: {{callback-url}}
+  ~X-Reference-Id: {{reference-id}}
+}
+
+auth:bearer {
+  token: {{access-token}}
+}
+
+body:json {
+  {
+      "notificationMessage": "Example Notification Message."
+  }
+}

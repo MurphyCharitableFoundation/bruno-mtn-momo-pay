@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "MTN Momo Pay Disbursements",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

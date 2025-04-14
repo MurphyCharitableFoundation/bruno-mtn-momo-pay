@@ -1,0 +1,36 @@
+meta {
+  name: MTN Momo Pay Disbursements
+}
+
+auth {
+  mode: none
+}
+
+vars:pre-request {
+  subscription-key: cb2e03592962484f9829f7217ad0ce4f
+  base-url: https://sandbox.momodeveloper.mtn.com
+  reference-id: f8b69600-b317-4dc7-a5dd-f995369cef10
+  api-key: 08b75a134c4846f39c8380908e137e45
+  access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSMjU2In0.eyJjbGllbnRJZCI6ImY4YjY5NjAwLWIzMTctNGRjNy1hNWRkLWY5OTUzNjljZWYxMCIsImV4cGlyZXMiOiIyMDI1LTA0LTE0VDIyOjEyOjM2LjI5MyIsInNlc3Npb25JZCI6IjRiNTg1NzdjLTIyNmMtNGVlNy1hYTcwLTE5Njg1NGM1ZDI1YiJ9.E3-K4K60SqwFaK3vq1clxby5cHFJMblSYOqU0JM8IssLM1HZHrRD2T6FG2pyyaAigQ7dA0QHz-gTIaWW4Yc806T0uhTqh7cmsWk8xllW_D5mUDt-POgDS7GsSAQE7K5emS1khgHB4cytEmLpIm9-5gVOwMZZhNND5N20kfzk2TtFznDmNX9G2FewxmUfIV6Dog7EzYWVZgjDS9QSuSV9ljliVYEnkNdd28uvZMJiGDl4LKkOGIwhTUNxEKpDBbOqF3XNKoHebkBaWr90iwOO9GdpmPmFNM3hwoheGlRfTKPpAxjLMC_3iAppnir9oBhJYK56j5xLx3UZoAbx2asQeA
+  target-environment: sandbox
+  callback-url: http://localhost:8000/api/payment/mtn/capture-payment
+  callback-host: localhost
+}
+
+docs {
+  # MTN Momo Pay Disbursements API Collection
+  
+  ## Overview
+  Use this collection as a guide for understanding and interacting with MTN for facilitating mobile money transactions: specifically disbursements. 
+  
+  Disbursement is the action that describes the MCF transfering funds from their MTN Wallet to a Beneficiary (in the case of Kind Giving App.) or to a Borrower (in the case of the Kind Loans App.)
+  
+  ## Variables
+  Ensure to use the correct variables which you can get by perusing the MTN Momo Pay Docs and registering for a developer account. As it stands, the variables used in this collection are associated with a maintainers MTN Developer account. 
+  
+  ## Resources
+  [Disbursements MTN Momo Pay Resources](https://momodeveloper.mtn.com/api-details#api=disbursement&operation=GetTransferStatus)
+  
+  ## Questions
+  Please reach out to @Ayo on Slack if you have any questions.
+}
